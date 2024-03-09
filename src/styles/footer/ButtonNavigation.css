@@ -1,0 +1,19 @@
+.btn-navigation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    height: 60px;
+    width: 20%;
+    border: 1px solid black;
+
+    transition: 0.3s ;
+}
+
+.btn-navigation-container:hover {
+    background-color: aquamarine;
+    font-size: 20px;
+    font-weight: bold;
+}
