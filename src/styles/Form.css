@@ -2,12 +2,30 @@
   padding: 25px 30px;
 }
 
-.header {
+.form-header {
   text-align: center;
   font-weight: bold;
   padding: 10px;
   margin-bottom: 10px;
   border-bottom: 1px solid #e6e6e6;
+  font-size: 30px;
+  color: #665ba7;
+}
+
+.form-footer {
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.form-logo img {
+  transition: transform 0.5s;
+}
+
+.form-logo img:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 .form-input {
@@ -21,6 +39,7 @@
 }
 
 .form-input input {
+  padding: 10px;
   outline: none;
   height: 40px;
   width: 100%;
@@ -28,6 +47,12 @@
   border-radius: 5px;
   border: 1px solid #ccc;
   box-sizing: border-box;
+}
+
+.form-input input:hover {
+  border-color: #4e4b4b;
+  transform: scale(1.05);
+  transition: transform 0.4s ease;
 }
 
 .btn-form-submit {
@@ -41,6 +66,16 @@
   margin-top: 13px;
   margin-bottom: 20px;
   width: 100%;
+}
+
+.btn-form-submit:hover {
+  transform: scale(1.05);
+  transition: transform 0.4s ease;
+}
+
+.btn-form-submit:active {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
 }
 
 .link-register a {
