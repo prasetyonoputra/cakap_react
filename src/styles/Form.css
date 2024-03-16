@@ -1,0 +1,49 @@
+.section-form {
+  padding: 25px 30px;
+}
+
+.header {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0 8px 0;
+}
+
+.form-input label {
+  margin-bottom: 5px;
+}
+
+.form-input input {
+  outline: none;
+  height: 40px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.btn-form-submit {
+  height: 45px;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  background: linear-gradient(to right, #4a69bb, #4a3985);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 13px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.link-register a {
+  color: #333;
+  text-decoration: none;
+}
