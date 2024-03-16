@@ -16,12 +16,12 @@ export default function FormLogin() {
       autoComplete="off"
       onSubmit={submitHandler}
     >
-      <div className="form-input">
+      <div className="form-input-custom">
         <label>Email</label>
         <input type="email" name="email" placeholder="Masukan email" required />
       </div>
 
-      <div className="form-input">
+      <div className="form-input-custom">
         <label>Password</label>
         <input
           type="password"

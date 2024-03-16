@@ -1,4 +1,4 @@
-.container {
+.container-custom {
   background: #fff;
   border-radius: 16px;
   width: 500px;
@@ -29,7 +29,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .container {
+  .container-custom {
     width: 100%;
   }
 }
