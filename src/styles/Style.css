@@ -9,11 +9,23 @@
 .center-item {
   display: flex;
   justify-content: center;
+  justify-content: center;
 }
 
 .item-column {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+}
+
+.item-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-row-around {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 @media screen and (max-width: 600px) {
