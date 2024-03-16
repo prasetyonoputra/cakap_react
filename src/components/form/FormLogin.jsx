@@ -1,14 +1,24 @@
+import { useNavigate } from "react-router-dom";
+
 export default function FormLogin() {
+
+  const navigate = useNavigate();
+
+  const submitHandler = () => {
+    navigate("/home");
+  }
+
   return (
     <form
       action="#"
       method="POST"
       encType="multipart/form-data"
       autoComplete="off"
+      onSubmit={submitHandler}
     >
       <div className="form-input">
         <label>Email</label>
-        <input type="text" name="email" placeholder="Masukan email" required />
+        <input type="email" name="email" placeholder="Masukan email" required />
       </div>
 
       <div className="form-input">
