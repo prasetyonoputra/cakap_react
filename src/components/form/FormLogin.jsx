@@ -1,12 +1,49 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import authService from "../../services/AuthService";
 
 export default function FormLogin() {
+  const [form, setForm] = useState({
+    username: "",
+    password: "",
+  });
 
   const navigate = useNavigate();
 
-  const submitHandler = () => {
-    navigate("/home");
-  }
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigate("/home");
+    }
+  }, []);
+
+  const submitHandler = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await authService.loginUser(form);
+
+      localStorage.setItem("token", response.data.token);
+
+      navigate("/home");
+
+      alert(response.data.message);
+    } catch (error) {
+      if (error.response) {
+        alert(error.response.data.message);
+      } else {
+        alert(error);
+      }
+    }
+  };
+
+  const changeHandler = (event) => {
+    const { name, value, files } = event.target;
+    const newValue = files ? files[0] : value;
+    setForm((prevState) => ({
+      ...prevState,
+      [name]: newValue,
+    }));
+  };
 
   return (
     <form
@@ -17,8 +54,14 @@ export default function FormLogin() {
       onSubmit={submitHandler}
     >
       <div className="form-input-custom">
-        <label>Email</label>
-        <input type="email" name="email" placeholder="Masukan email" required />
+        <label>Username</label>
+        <input
+          type="text"
+          name="username"
+          placeholder="Masukan Username"
+          required
+          onChange={changeHandler}
+        />
       </div>
 
       <div className="form-input-custom">
@@ -26,8 +69,9 @@ export default function FormLogin() {
         <input
           type="password"
           name="password"
-          placeholder="Masukan password"
+          placeholder="Masukan Password"
           required
+          onChange={changeHandler}
         />
 
         <i className="fas fa-eye"></i>
@@ -36,7 +80,7 @@ export default function FormLogin() {
         <input
           type="submit"
           name="submit"
-          value="Lanjutkan ke Chat"
+          value="Masuk"
           className="btn-form-submit"
         />
       </div>
