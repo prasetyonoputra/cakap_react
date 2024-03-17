@@ -10,7 +10,7 @@ export default function HomeUserList() {
                     </div>
                     <div class="user-list ms-2 d-flex flex-column align-items-start">
                         <span class="fw-bold">Nama User</span>
-                        <span>Status</span>
+                        <span>Tidak ada pesan</span>
                     </div>
                 </div>
                 <div class="col d-flex align-items-center justify-content-center">
