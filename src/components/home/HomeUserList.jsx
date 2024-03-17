@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function HomeUserList() {
     return (
-        <div>
+        <div class='d-flex justify-content-center align-items-center'>
             <div class="row">
-                <div class="col-auto d-flex align-items-center">
+                <div class="col-auto d-flex align-items-center justify-content-center">
                     <div className='me-2'>
                         <img width="50" height="50" src="./assets/images/default-logo.png" alt="Profile Logo" class="rounded-circle" />
                     </div>
