@@ -35,4 +35,15 @@ const getUserImage = async () => {
   }
 };
 
-export default { getDetailUser, getUserImage };
+const fetchUserDetail = async () => {
+  const userData = await getDetailUser();
+  const userImageData = await getUserImage();
+
+  if (userImageData) {
+    userData.imageProfile = userImageData;
+  }
+
+  return userData;
+};
+
+export default { fetchUserDetail };

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Container from "../components/Container";
 import ChatContainer from "../components/chat/ChatContainer";
@@ -5,7 +6,6 @@ import ChatInputAction from "../components/chat/ChatInputAction";
 import ChatItemIngoing from "../components/chat/ChatItemIngoing";
 import ChatItemOutGoing from "../components/chat/ChatItemOutGoing";
 import HeaderChat from "../components/chat/HeaderChat";
-import { useEffect, useState } from "react";
 import userHelper from "../helper/UserHelper";
 
 export default function ChatPage() {
@@ -15,19 +15,14 @@ export default function ChatPage() {
   useEffect(() => {
     const fetchDataUser = async () => {
       if (localStorage.getItem("token")) {
-        const userData = await userHelper.getDetailUser();
-        const userImageData = await userHelper.getUserImage();
+        const userData = await userHelper.fetchUserDetail();
 
-        if (!userData) {
+        if (userData) {
+          setUserProfile(userData);
+        } else {
           alert("You must login first!");
           navigate("/logout");
         }
-
-        if (userImageData) {
-          userData.imageProfile = userImageData;
-        }
-
-        setUserProfile(userData);
       } else {
         alert("You must login first!");
         navigate("/logout");
