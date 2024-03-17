@@ -15,10 +15,9 @@ export default function ChatPage() {
 
   useEffect(() => {
     const getDataUser = async () => {
-      const token = localStorage.getItem("token");
-      if (token) {
-        const userData = await userHelper.getDetailUser(token);
-        const userImageData = await userHelper.getUserImage(token);
+      if (localStorage.getItem("token")) {
+        const userData = await userHelper.getDetailUser();
+        const userImageData = await userHelper.getUserImage();
 
         if (userData) {
           setUser(userData);
@@ -36,7 +35,7 @@ export default function ChatPage() {
     };
 
     getDataUser();
-  }, [navigate]);
+  }, []);
 
   return (
     <Container>

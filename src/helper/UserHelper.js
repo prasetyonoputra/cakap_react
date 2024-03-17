@@ -1,8 +1,8 @@
 import authService from "../services/AuthService";
 
-const getDetailUser = async (data) => {
+const getDetailUser = async () => {
   try {
-    const response = await authService.fetchDetailUser(data);
+    const response = await authService.fetchDetailUser();
 
     return response.data.user;
   } catch (error) {
@@ -16,9 +16,9 @@ const getDetailUser = async (data) => {
   }
 };
 
-const getUserImage = async (data) => {
+const getUserImage = async () => {
   try {
-    const response = await authService.fetchImageProfile(data);
+    const response = await authService.fetchImageProfile();
 
     const base64String = btoa(
       new Uint8Array(response.data).reduce(

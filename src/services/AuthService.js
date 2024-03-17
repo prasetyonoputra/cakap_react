@@ -25,19 +25,17 @@ const loginUser = async (data) => {
   return await axios.post(`${Configuration.API_URL}/api/auth/login`, data);
 };
 
-const fetchDetailUser = async (data) => {
-  return await axios.get(
-    `${Configuration.API_URL}/api/auth/user?token=${data}`
-  );
+const fetchDetailUser = async () => {
+  return await axios.get(`${Configuration.API_URL}/api/user/detail`, {
+    headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+  });
 };
 
-const fetchImageProfile = async (data) => {
-  return await axios.get(
-    `${Configuration.API_URL}/api/auth/userImage?token=${data}`,
-    {
-      responseType: "arraybuffer",
-    }
-  );
+const fetchImageProfile = async () => {
+  return await axios.get(`${Configuration.API_URL}/api/user/image`, {
+    responseType: "arraybuffer",
+    headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+  });
 };
 
 export default { loginUser, registerUser, fetchDetailUser, fetchImageProfile };
