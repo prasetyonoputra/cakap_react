@@ -1,4 +1,4 @@
-export default function HeaderChat({ user, userImage }) {
+export default function HeaderChat({ userProfile }) {
   return (
     <div className="header-chat item-row-around">
       <div className="item-row">
@@ -14,13 +14,13 @@ export default function HeaderChat({ user, userImage }) {
             style={{ marginRight: "10px", borderRadius: "50%" }}
             width={55}
             height={55}
-            src={userImage}
+            src={userProfile.imageProfile}
             alt="Profile Logo"
           />
 
           <div className="item-column">
-            <span>{`${user.firstName} ${user.lastName}`}</span>
-            <span>{user.status}</span>
+            <span>{`${userProfile.firstName} ${userProfile.lastName}`}</span>
+            <span>{userProfile.status}</span>
           </div>
         </div>
       </div>

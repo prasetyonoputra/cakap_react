@@ -9,37 +9,37 @@ import userHelper from "../helper/UserHelper";
 
 export default function HomePage() {
   const navigate = useNavigate();
-  const [user, setUser] = useState({});
-  const [userImage, setUserImage] = useState({});
+  const [userProfile, setUserProfile] = useState({});
 
   useEffect(() => {
-    const getDataUser = async () => {
+    const fetchDataUser = async () => {
       if (localStorage.getItem("token")) {
         const userData = await userHelper.getDetailUser();
         const userImageData = await userHelper.getUserImage();
 
-        if (userData) {
-          setUser(userData);
-        } else {
+        if (!userData) {
+          alert("You must login first!");
           navigate("/logout");
         }
 
         if (userImageData) {
-          setUserImage(userImageData);
+          userData.imageProfile = userImageData;
         }
+
+        setUserProfile(userData);
       } else {
         alert("You must login first!");
         navigate("/logout");
       }
     };
 
-    getDataUser();
+    fetchDataUser();
   }, []);
 
   return (
     <Container>
       <SectionForm>
-        <HeaderUsers />
+        <HeaderUsers userProfile={userProfile} />
         <hr />
         <HomeBtnMenu />
         <HomeUserList />
