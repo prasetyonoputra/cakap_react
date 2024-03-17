@@ -7,7 +7,7 @@ export default function FormRegister() {
       autoComplete="off"
     >
       <div className="item-column">
-        <div className="form-input">
+        <div className="form-input-custom">
           <label>Nama Depan</label>
           <input
             type="text"
@@ -17,7 +17,7 @@ export default function FormRegister() {
           />
         </div>
 
-        <div className="form-input">
+        <div className="form-input-custom">
           <label>Nama Belakang</label>
           <input
             type="text"
@@ -28,12 +28,12 @@ export default function FormRegister() {
         </div>
       </div>
 
-      <div className="form-input">
+      <div className="form-input-custom">
         <label>Email</label>
         <input type="email" name="email" placeholder="Masukan email" required />
       </div>
 
-      <div className="form-input">
+      <div className="form-input-custom">
         <label>Password</label>
         <input
           type="password"
@@ -43,7 +43,7 @@ export default function FormRegister() {
         />
       </div>
 
-      <div className="form-input">
+      <div className="form-input-custom">
         <label>Pilih Gambar</label>
         <input
           type="file"

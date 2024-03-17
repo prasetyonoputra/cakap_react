@@ -63,7 +63,7 @@ export default function ChatPage() {
         </div>
       </div>
 
-      <div className="chat-container">Chat Container</div>
+      <div className="chat-container-custom">Chat Container</div>
 
       <div className="chat-submit">Submit</div>
     </Container>
