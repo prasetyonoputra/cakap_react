@@ -30,7 +30,7 @@ export default function ChatPage() {
     };
 
     fetchDataUser();
-  }, []);
+  }, [navigate]);
 
   return (
     <Container>

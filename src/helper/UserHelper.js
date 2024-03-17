@@ -46,4 +46,6 @@ const fetchUserDetail = async () => {
   return userData;
 };
 
-export default { fetchUserDetail };
+const exportedObject = { fetchUserDetail };
+
+export default exportedObject;

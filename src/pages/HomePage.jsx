@@ -29,7 +29,7 @@ export default function HomePage() {
     };
 
     fetchDataUser();
-  }, []);
+  }, [navigate]);
 
   return (
     <Container>

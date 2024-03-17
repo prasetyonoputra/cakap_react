@@ -38,4 +38,6 @@ const fetchImageProfile = async () => {
   });
 };
 
-export default { loginUser, registerUser, fetchDetailUser, fetchImageProfile };
+const exportedObject = { loginUser, registerUser, fetchDetailUser, fetchImageProfile };
+
+export default exportedObject;

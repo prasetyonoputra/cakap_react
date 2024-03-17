@@ -18,7 +18,7 @@ export default function FormRegister() {
     if (localStorage.getItem("token")) {
       navigate("/home");
     }
-  }, []);
+  }, [navigate]);
 
   const submitHandler = async (event) => {
     event.preventDefault();

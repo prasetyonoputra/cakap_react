@@ -1,4 +1,4 @@
-export default function ChatInputAction({}) {
+export default function ChatInputAction() {
   return (
     <div className="chat-submit item-row-around">
       <button className="custom-button" onClick={() => window.history.back()}>
