@@ -10,7 +10,7 @@ export default function HeaderUsers({ userProfile }) {
               <img
                 width="50"
                 height="50"
-                src="./assets/images/default-logo.png"
+                src={userProfile.imageProfile}
                 alt="Profile Logo"
                 className="rounded-circle"
               />

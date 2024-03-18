@@ -6,10 +6,12 @@ import HeaderUsers from "../components/home/HeaderUsers";
 import HomeBtnMenu from "../components/home/HomeBtnMenu";
 import HomeUserList from "../components/home/HomeUserList";
 import userHelper from "../helper/UserHelper";
+import contactService from "../services/ContactService";
 
 export default function HomePage() {
   const navigate = useNavigate();
   const [userProfile, setUserProfile] = useState({});
+  const [listContact, setListContact] = useState([]);
 
   useEffect(() => {
     const fetchDataUser = async () => {
@@ -28,7 +30,16 @@ export default function HomePage() {
       }
     };
 
+    const fetchListContact = async () => {
+      const listContactData = await contactService.getListContact();
+
+      if (listContactData) {
+        setListContact(listContactData.data.contacts);
+      }
+    };
+
     fetchDataUser();
+    fetchListContact();
   }, [navigate]);
 
   return (
@@ -37,7 +48,7 @@ export default function HomePage() {
         <HeaderUsers userProfile={userProfile} />
         <hr />
         <HomeBtnMenu />
-        <HomeUserList />
+        <HomeUserList listContact={listContact}/>
       </SectionForm>
     </Container>
   );
