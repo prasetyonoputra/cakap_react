@@ -13,8 +13,8 @@ const getListContact = async () => {
   });
 };
 
-const deleteContact = async () => {
-  return await axios.delete(`${Configuration.API_URL}/api/contact`, {
+const deleteContact = async (data) => {
+  return await axios.delete(`${Configuration.API_URL}/api/contact`, data, {
     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
   });
 };
