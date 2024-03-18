@@ -2,7 +2,10 @@ import React from "react";
 
 export default function HomeUserList() {
   return (
-    <div className="d-flex justify-content-center align-items-center">
+    <div
+      className="d-flex justify-content-center align-items-center"
+      style={{ cursor: "pointer" }}
+    >
       <div className="row">
         <div className="col-auto d-flex align-items-center justify-content-center">
           <div className="me-2">
