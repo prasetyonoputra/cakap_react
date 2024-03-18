@@ -27,17 +27,22 @@ const loginUser = async (data) => {
 
 const fetchDetailUser = async () => {
   return await axios.get(`${Configuration.API_URL}/api/user/detail`, {
-    headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
   });
 };
 
 const fetchImageProfile = async () => {
   return await axios.get(`${Configuration.API_URL}/api/user/image`, {
     responseType: "arraybuffer",
-    headers: { Authorization: "Bearer " + localStorage.getItem("token") },
+    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
   });
 };
 
-const exportedObject = { loginUser, registerUser, fetchDetailUser, fetchImageProfile };
+const exportedObject = {
+  loginUser,
+  registerUser,
+  fetchDetailUser,
+  fetchImageProfile,
+};
 
 export default exportedObject;

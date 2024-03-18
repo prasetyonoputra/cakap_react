@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap";
 import Logout from "./components/Logout";
+import ChatSocket from "./pages/ChatSocket";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/home" Component={HomePage} />
         <Route path="/chat" Component={ChatPage} />
         <Route path="/logout" Component={Logout} />
+        <Route path="/chatsocket" Component={ChatSocket} />
       </Routes>
     </Router>
   );
