@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import ModalAddContact from "./ModalAddContact";
 export default function HomeBtnMenu() {
+  const [show, setShow] = useState(false);
   return (
     <>
       <div className="contact-grouplist justify-content-center">
+        <ModalAddContact show={show} setShow={setShow} />
         <NavLink to="/groups" className="lgrup">
           <div className="row d-flex align-items-center">
             <div className="col-sm-1">
@@ -21,7 +24,7 @@ export default function HomeBtnMenu() {
             <div className="col-sm-2">Grup</div>
           </div>
         </NavLink>
-        <a href="/addcontact" className="addcontact">
+        <a onClick={(e) => setShow(!show)} className="addcontact">
           <div className="row d-flex align-items-center">
             <div className="col-sm-1">
               <svg

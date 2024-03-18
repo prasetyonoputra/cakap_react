@@ -91,6 +91,7 @@
 .create-group:hover {
   background: #4a69bb;
   color: #fff;
+  cursor: pointer;
 }
 
 .users .search {
