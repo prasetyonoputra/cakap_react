@@ -15,7 +15,7 @@ export default function ModalAddContact({ show, setShow }) {
 
     try {
       const response = await contactService.addContact({ username: username });
-      console.log(response);
+      alert(response.data.message);
     } catch (error) {
       if (error.response.data) {
         alert(error.response.data.message);
