@@ -11,6 +11,10 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap";
 import Logout from "./components/Logout";
 import ChatSocket from "./pages/ChatSocket";
+import Groups from "./pages/Groups";
+import AddGroups from "./pages/AddGroups";
+import AddContact from "./pages/AddContact";
+import ResetPassword from "./pages/ResetPassword";
 
 export default function App() {
   return (
@@ -23,6 +27,10 @@ export default function App() {
         <Route path="/chat" Component={ChatPage} />
         <Route path="/logout" Component={Logout} />
         <Route path="/chatsocket" Component={ChatSocket} />
+        <Route path="/groups" Component={Groups} />
+        <Route path="/addgroups" Component={AddGroups} />
+        <Route path="/addcontact" Component={AddContact} />
+        <Route path="/resetpassword" Component={ResetPassword} />
       </Routes>
     </Router>
   );

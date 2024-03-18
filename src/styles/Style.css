@@ -71,7 +71,8 @@
 
 .lgrup,
 .addcontact,
-.hiscall {
+.hiscall,
+.create-group {
   background: none;
   color: #4a69bb;
   outline: none;
@@ -86,7 +87,8 @@
 
 .lgrup:hover,
 .addcontact:hover,
-.hiscall:hover {
+.hiscall:hover,
+.create-group:hover {
   background: #4a69bb;
   color: #fff;
 }

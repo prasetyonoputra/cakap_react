@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 export default function HeaderUsers({ userProfile }) {
   return (
     <div>
@@ -41,14 +42,14 @@ export default function HeaderUsers({ userProfile }) {
                 </a>
               </li>
               <li>
-                <a href="#" className="dropdown-item">
+                <NavLink to="/resetpassword" className="dropdown-item">
                   <div className="row d-flex align-items-center">
                     <div className="col-sm-1">
                       <span className="bi bi-key"></span>
                     </div>
                     <div className="col-sm-2">Reset Password</div>
                   </div>
-                </a>
+                </NavLink>
               </li>
               <li>
                 <a href="" className="dropdown-item">

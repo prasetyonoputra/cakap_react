@@ -1,10 +1,10 @@
 import React from "react";
-
+import { NavLink } from "react-router-dom";
 export default function HomeBtnMenu() {
   return (
     <>
       <div className="contact-grouplist justify-content-center">
-        <a href="#" className="lgrup">
+        <NavLink to="/groups" className="lgrup">
           <div className="row d-flex align-items-center">
             <div className="col-sm-1">
               <svg
@@ -20,8 +20,8 @@ export default function HomeBtnMenu() {
             </div>
             <div className="col-sm-2">Grup</div>
           </div>
-        </a>
-        <a href="#" className="addcontact">
+        </NavLink>
+        <a href="/addcontact" className="addcontact">
           <div className="row d-flex align-items-center">
             <div className="col-sm-1">
               <svg
@@ -56,7 +56,7 @@ export default function HomeBtnMenu() {
                 />
               </svg>
             </div>
-            <div className="col">Riwayat</div>
+            <div className="col">Panggilan</div>
           </div>
         </a>
       </div>
