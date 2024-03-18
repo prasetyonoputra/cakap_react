@@ -14,32 +14,38 @@ export default function HomePage() {
   const [listContact, setListContact] = useState([]);
 
   useEffect(() => {
-    const fetchDataUser = async () => {
-      if (localStorage.getItem("token")) {
-        const userData = await userHelper.fetchUserDetail();
+    const fetchData = async () => {
+      try {
+        if (localStorage.getItem("token")) {
+          const userData = await userHelper.fetchUserDetail();
 
-        if (userData) {
-          setUserProfile(userData);
+          if (userData) {
+            setUserProfile(userData);
+          } else {
+            throw new Error("Failed to fetch user data");
+          }
         } else {
-          alert("You must login first!");
-          navigate("/logout");
+          throw new Error("You must login first!");
         }
-      } else {
-        alert("You must login first!");
+      } catch (error) {
+        alert(error.message);
         navigate("/logout");
       }
-    };
 
-    const fetchListContact = async () => {
-      const listContactData = await contactService.getListContact();
+      try {
+        const listContactData = await contactService.getListContact();
 
-      if (listContactData) {
-        setListContact(listContactData.data.contacts);
+        if (listContactData) {
+          setListContact(listContactData.data.contacts);
+        } else {
+          throw new Error("Failed to fetch contact list data");
+        }
+      } catch (error) {
+        alert(error.message);
       }
     };
 
-    fetchDataUser();
-    fetchListContact();
+    fetchData();
   }, [navigate]);
 
   return (
@@ -48,7 +54,7 @@ export default function HomePage() {
         <HeaderUsers userProfile={userProfile} />
         <hr />
         <HomeBtnMenu />
-        <HomeUserList listContact={listContact}/>
+        <HomeUserList listContact={listContact} />
       </SectionForm>
     </Container>
   );
