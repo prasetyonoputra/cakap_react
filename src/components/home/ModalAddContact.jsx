@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import contactService from "../../services/ContactService";
 import Container from "../Container";
 import Footer from "../Footer";
 import SectionForm from "../form/SectionForm";
-import contactService from "../../services/ContactService";
 
 export default function ModalAddContact({ show, setShow }) {
   const handleClose = () => setShow(false);
