@@ -2,9 +2,20 @@
   background: #fff;
   border-radius: 16px;
   width: 450px;
-  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
-    0 32px 64px -48px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+  
+  /* Menempatkan di tengah */
+  position: fixed; /* Atau bisa menggunakan absolute, tergantung pada kebutuhan Anda */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+/* styles.css */
+.form-header {
+  font-size: 24px;
+}
+
 
 .center-item {
   display: flex;

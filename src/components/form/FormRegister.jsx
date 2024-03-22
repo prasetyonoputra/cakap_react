@@ -118,7 +118,7 @@ export default function FormRegister() {
         />
       </div>
 
-      <div className="form-input-custom">
+      <div className="input">
         <label>Pilih Gambar</label>
         <input type="file" name="imageProfile" onChange={changeHandler} />
       </div>

@@ -9,7 +9,7 @@ export default function RegisterPage() {
     return (
         <Container>
             <SectionForm>
-                <FormHeader text={"Register"} />
+                <FormHeader text={"Register"} className="form-header"/>
                 <FormRegister />
                 <LinkLogin />
             </SectionForm>
