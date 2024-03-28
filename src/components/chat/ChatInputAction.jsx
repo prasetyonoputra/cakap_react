@@ -1,4 +1,14 @@
-export default function ChatInputAction() {
+import { useState } from "react";
+
+export default function ChatInputAction({ socket, contactProfile }) {
+  const [message, setMessage] = useState("");
+
+  const handleSend = () => {
+    setMessage("");
+
+    socket.emit("message", message, contactProfile.socketId);
+  };
+
   return (
     <div className="chat-submit item-row-around">
       <button className="custom-button" onClick={() => window.history.back()}>
@@ -14,6 +24,8 @@ export default function ChatInputAction() {
           name="message-text"
           id="message-text"
           placeholder="Ketik Pesan"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
         />
       </div>
 
@@ -32,7 +44,7 @@ export default function ChatInputAction() {
           ></span>
         </button>
 
-        <button className="custom-button" onClick={() => window.history.back()}>
+        <button className="custom-button" onClick={() => handleSend()}>
           <span
             className="bi bi-send-fill"
             style={{ color: "#4a69bb", fontSize: "20px" }}

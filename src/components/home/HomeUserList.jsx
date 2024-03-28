@@ -1,6 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function HomeUserList({ listContact }) {
+  const navigate = useNavigate();
+  const handleClick = (username) => {
+    navigate(`/chat?username=${username}`);
+  }
+
   return (
     <div
       className="d-flex justify-content-center align-items-center"
@@ -10,7 +16,7 @@ export default function HomeUserList({ listContact }) {
         {listContact.map((contact) => {
           return (
             <React.Fragment key={contact.username}>
-              <div className="col-auto d-flex align-items-center justify-content-center">
+              <div className="col-auto d-flex align-items-center justify-content-center" onClick={() => handleClick(contact.username)}>
                 <div className="me-2">
                   <img
                     width="50"

@@ -5,10 +5,11 @@ const registerUser = async (data) => {
   const formData = new FormData();
 
   formData.append("imageProfile", data.imageProfile);
-
-  delete data.imageProfile;
-
-  formData.append("user", JSON.stringify(data));
+  formData.append("firstName", data.firstName);
+  formData.append("lastName", data.lastName);
+  formData.append("email", data.email);
+  formData.append("username", data.username);
+  formData.append("password", data.password);
 
   return await axios.post(
     `${Configuration.API_URL}/api/auth/register`,
@@ -25,24 +26,9 @@ const loginUser = async (data) => {
   return await axios.post(`${Configuration.API_URL}/api/auth/login`, data);
 };
 
-const fetchDetailUser = async () => {
-  return await axios.get(`${Configuration.API_URL}/api/user/detail`, {
-    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-  });
-};
-
-const fetchImageProfile = async () => {
-  return await axios.get(`${Configuration.API_URL}/api/user/image`, {
-    responseType: "arraybuffer",
-    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-  });
-};
-
 const exportedObject = {
   loginUser,
   registerUser,
-  fetchDetailUser,
-  fetchImageProfile,
 };
 
 export default exportedObject;

@@ -10,9 +10,9 @@ export default function LoginPage() {
   return (
     <Container>
       <SectionForm>
-      <FormHeader text={"Login"} className="form-header" />
+        <FormHeader text={"Login"} className="form-header" />
         <FormLogo />
-        <FormLogin />
+        <FormLogin/>
         <LinkRegister />
       </SectionForm>
       <Footer />

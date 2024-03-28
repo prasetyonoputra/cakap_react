@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import authService from "../../services/AuthService";
+import userService from "../../services/UserService";
 
-export default function FormLogin() {
+export default function FormLogin({ socket }) {
   const [form, setForm] = useState({
     username: "",
     password: "",
@@ -11,8 +12,19 @@ export default function FormLogin() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const setData = async () => {
+      if (socket) {
+        try {
+          const response = await userService.setSocketId(socket.id);
+          console.log(response.data.message);
+          navigate("/home");
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    };
     if (localStorage.getItem("token")) {
-      navigate("/home");
+      setData();
     }
   }, [navigate]);
 
@@ -21,9 +33,7 @@ export default function FormLogin() {
 
     try {
       const response = await authService.loginUser(form);
-
       localStorage.setItem("token", response.data.token);
-
       navigate("/home");
 
       alert(response.data.message);

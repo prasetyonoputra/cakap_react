@@ -13,6 +13,12 @@ const getListContact = async () => {
   });
 };
 
+const getDetailContact = async (username) => {
+  return await axios.get(`${Configuration.API_URL}/api/contact/detail?username=${username}`, {
+    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+  });
+};
+
 const deleteContact = async (data) => {
   return await axios.delete(`${Configuration.API_URL}/api/contact`, data, {
     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -23,6 +29,7 @@ const exportedObject = {
   addContact,
   getListContact,
   deleteContact,
+  getDetailContact,
 };
 
 export default exportedObject;

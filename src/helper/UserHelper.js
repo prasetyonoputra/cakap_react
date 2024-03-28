@@ -1,8 +1,8 @@
-import authService from "../services/AuthService";
+import userService from "../services/UserService";
 
 const getDetailUser = async () => {
   try {
-    const response = await authService.fetchDetailUser();
+    const response = await userService.fetchDetailUser();
 
     return response.data.user;
   } catch (error) {
@@ -18,7 +18,7 @@ const getDetailUser = async () => {
 
 const getUserImage = async () => {
   try {
-    const response = await authService.fetchImageProfile();
+    const response = await userService.fetchImageProfile();
 
     const base64String = btoa(
       new Uint8Array(response.data).reduce(

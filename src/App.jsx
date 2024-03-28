@@ -5,7 +5,6 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Logout from "./components/Logout";
 import AddGroups from "./pages/AddGroups";
 import ChatPage from "./pages/ChatPage";
-import ChatSocket from "./pages/ChatSocket";
 import Groups from "./pages/Groups";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
@@ -25,7 +24,6 @@ export default function App() {
         <Route path="/home" Component={HomePage} />
         <Route path="/chat" Component={ChatPage} />
         <Route path="/logout" Component={Logout} />
-        <Route path="/chatsocket" Component={ChatSocket} />
         <Route path="/groups" Component={Groups} />
         <Route path="/addgroups" Component={AddGroups} />
         <Route path="/resetpassword" Component={ResetPassword} />
